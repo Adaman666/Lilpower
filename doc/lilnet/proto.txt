@@ -1,3 +1,10 @@
+##########################################################################
+##
+##		Protocol lilnet utilisé pour le projet Lilpower
+##
+##	propriété de Loïc Dalloz, Alexandre Brand, Jean-Charles Blind, Arthur Declerq et Romain Brewee
+##
+##########################################################################
      SERVER     |				|     CLIENT
      		|	     "HELLO"		|
 		|<------------------------------|<--Demande de connection
