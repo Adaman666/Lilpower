@@ -1,0 +1,53 @@
+     SERVER     |				|     CLIENT
+     		|	     "HELLO"		|
+		|<------------------------------|<--Demande de connection
+connection	|				|
+accepté		|	     "HELLO"		|
+	|------>|------------------------------>|
+		|				|
+		|	MA CLE PUBLIQUE		|
+		|<------------------------------|
+		|				|
+		|	MA CLE PUBLIQUE		|
+		|------------------------------>|
+cryptage de 	|				| cryptage de 
+toutes les	|				| toutes les
+données		|	    MES INFOS		| données
+		|<------------------------------|
+		|				|
+		|    CONFIRMATION RECEPTION	|
+		|------------------------------>|
+attente		|				| Attente
+autorisation	|				| autorisation
+manuelle	|	   AUTORISATION		|
+	|------>|------------------------------>|
+		|				| Vérif de l'autorisation
+		|	   CONFIRMATION		|
+		|<------------------------------|
+		|				|
+		|      INFOS SERVEUR/RESEAU	|
+		|------------------------------>|
+		|				|
+		|	   CONFIRMATION		|
+		|<------------------------------|
+		|				|
+================|===============================|========================
+		|				|
+		|				| A temps
+		|				| régulier
+		|       PRODUCTION ACTUELLE	|
+		|<------------------------------|<----|
+		|				|
+		|     CONFIRMATION RECEPTION	|
+		|------------------------------>|
+		|				|
+================|===============================|========================
+		|				|
+Quand cela le	|				|
+nécessite	|      PRODUCTION DEMANDEE	|
+	|------>|------------------------------>|
+		|				|
+		|   "CE QUE JE VAIS PRODUIRE"	|
+		|<------------------------------|
+		|				|
+================|===============================|========================
