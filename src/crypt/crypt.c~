@@ -100,8 +100,11 @@ crypt_key* crypt_create_private(crypt_key** public_key)
 char* crypt_encrypt(char* message, crypt_key* public_key)
 {
 	//ressources
-
-	//TODO
+	int size, i;
+	char* buffer;
+	
+	//récupétation de la taille du message :
+	size = sizeof(*message);
 }
 
 /**
@@ -136,21 +139,17 @@ static unsigned long double crypt_find_prem_other(int size, int a, int b)
 
 	if(a == 0)
 	{
-		nubmer = crypt_find_prem(size);
+		//...
 	}
 	else
 	{
 		if(b==0)
 		{
-			do{
-				number = crypt_find_prem(size);
-			}while(crypt_is_prem(number, a) == CR_FALSE);
+			//...
 		}
 		else
 		{
-			do{
-				number = crypt_find_prem(size);
-			}while((crypt_is_prem(number, a) == CR_FALSE) && (crypt_is_prem(number, b)));
+			//...
 		}
 	}
  	
@@ -203,60 +202,4 @@ static unsigned long double crypt_find_prem(int size)
 	fclose(prem);
 
 	return nbr;
-}
-
-/**
- * 	fonction de pgcd
- *
- * 	@param: a et b -> les deux nombres à tester
- *
- * 	@retour: CR_TRUE si les deux nombre sont premiers entre eux et CR_FALSE si non
- */
-static int crypt_is_prem(unsigned long double a, unsigned long double b)
-{
-	//ressources
-	int result;
-	unsigned long double x, y;
-
-	//blindage :
-	if(a > b){
-		x = a;
-		y = b;}
-	else{
-		x = b;
-		y = a;}
-
-	//test
-	if(crypt_euclide(x, y) == 1)
-		result = CR_TRUE;
-	else
-		result = CR_FALSE;
-
-	//retour du résultat
-	return result;
-}
-	
-/**
- * 	fonction récursive de l'algorythme d'euclide
- *
- * 	@param: a et b -> les deux nombre à diviser (avec a>b)
- *
- * 	@retour: pgcd des deux nombres
- */
-static unsigned long double crypt_euclide(unsigned long double a, unsigned long double b)
-{
-	//ressources
-	unsigned long double r;
-	unsigned long double ret;
-
-	//division :
-	r = a%b;
-
-	//algo en lui même :
-	if(r != 0)
-		ret = crypt_euclide(b, r);
-	else
-		ret = b;
-
-	return ret;
 }
