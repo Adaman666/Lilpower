@@ -45,7 +45,6 @@ crypt_key* crypt_create_private(crypt_key** public_key)
 {
 	//ressources
 	crypt_key* pr_k = NULL;
-	int public_k, private_k;
 
 	//allocation de la strucure clÃ© privÃ©e
 	pr_k = (crypt_key*)malloc(sizeof(crypt_key));
@@ -93,4 +92,38 @@ char* crypt_decrypt(char* message, crypt_key* private_key)
 	//ressources
 	
 	//TODO
+}
+
+/**
+ *	fonction de recherche de nombre premier
+ *
+ *	@param: size -> taille (en bit) du nombre à trouver (max : sizeof(int) sur une machine 32bit
+ *		a -> nombre avec lequel le nombre doit être premier (0 par défaut)
+ *		b -> comme a
+ *
+ *	@retour: numéro retourné
+ */
+static unsigned int crypt_find_prem(int size, int a, int b)
+{
+
+	//ressources
+	unsigned int number;
+
+	if(a == 0)
+	{
+		//...
+	}
+	else
+	{
+		if(b==0)
+		{
+			//...
+		}
+		else
+		{
+			//...
+		}
+	}
+ 	
+	return number;
 }

@@ -17,7 +17,9 @@
 typedef struct key
 {
 	int type;
-	int key;
+	unsigned int p, q;
+	unsigned int n, f;
+	unsigned int e, d;
 }crypt_key;
 
 /* prototypes des fonctions */
@@ -28,5 +30,8 @@ crypt_key* crypt_create_private(crypt_key** public_key);
 //fonction de cryptage-decriptage
 char* crypt_encrypt(char* message, crypt_key* public_key);
 char* crypt_decrypt(char* message, crypt_key* private_key);
+
+//fonction utilitaires
+static unsigned int crypt_find_prem(int size, int a, int b);
 
 #endif
