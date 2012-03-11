@@ -17,14 +17,14 @@
 typedef struct key
 {
 	int type;
-	unsigned int p, q;
-	unsigned int n, f;
-	unsigned int e, d;
+	unsigned long double p, q;
+	unsigned long double n, f;
+	unsigned long double e, d;
 }crypt_key;
 
 /* prototypes des fonctions */
 //fonctions de création de clé
-crypt_key* crypt_create_public(int key);
+crypt_key* crypt_create_public(unsigned long double e, unsigned long double n);
 crypt_key* crypt_create_private(crypt_key** public_key);
 
 //fonction de cryptage-decriptage
@@ -32,6 +32,7 @@ char* crypt_encrypt(char* message, crypt_key* public_key);
 char* crypt_decrypt(char* message, crypt_key* private_key);
 
 //fonction utilitaires
-static unsigned int crypt_find_prem(int size, int a, int b);
+static unsigned long double crypt_find_prem_other(int size, unsigned long double a, unsigned long double b);
+static unsigned long double crypt_find_prem(int size);
 
 #endif
