@@ -8,6 +8,7 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
+#include "net_includes.h"
 #include "../crypt/crypt.h"
 
 #define ACCEPTED 1
@@ -51,5 +52,6 @@ int lilnet_client_server_sent_request(int(*production_function)(int time, int pr
 
 //fonctions utilitaires
 char* lilnet_server_extract_client_infos(t_lilnet_s* c);
+char* lilnet_client_extract_server_infos(t_lilnet_c* c);
 
 #endif

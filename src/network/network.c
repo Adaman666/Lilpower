@@ -144,4 +144,51 @@ int lilnet_server_client_sent_production(t_lilnet_s* c)
  *
  * 	@retour: production possible dans le temps impartis par le serveur
  */
-int lilnet_server_send_productio
+int lilnet_server_send_production_request(int production, t_lilnet_c* c)
+{
+
+}
+
+/**
+ * 	fonction d'envoie d'une demande de production de la part du serveur
+ *
+ * 	@param: productoin fonction -> fonction de calcul du temps de réponse de la ressource
+ * 		c -> connection à utiliser
+ *
+ * 	@retour: -1 si rien n'a été envoyé si non retour de la production demandée
+ *
+ * 	Cahier des charges de la fonction production_function : retourne l production possible en un temps donné (time) par rapport à la production demandée (production)
+ *
+ */
+int lilnet_client_server_sent_request(int(*production_function)(int time, int production), t_lilnet_c* c)
+{
+
+}
+
+
+/** fonctions utilitaires */
+
+/**
+ * 	fonction d'extraction des infos du client dans la structure de connection du serveur
+ *
+ * 	@param: c -> connection a utiliser
+ *
+ * 	@retour: buffer des infos du client connecté
+ */
+char* lilnet_server_extract_client_infos(t_lilnet_s* c)
+{
+
+}
+
+/**
+ * 	fonction d'extraction des infos du serveur dans la structure de connection
+ *
+ * 	@param: c -> connection à utiliser
+ *
+ * 	@retour: buffer des infos du serveur connecté
+ */
+char* lilnet_client_extract_server_infos(t_lilnet_c* c)
+{
+
+}
+
