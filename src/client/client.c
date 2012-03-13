@@ -1,13 +1,21 @@
-#include "client.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <gtk.h>
 
-/** point d'entrÃ©e du programme */
 int main(int argc, char* argv[])
 {
-	//ressources
+    // Ressource
 
-	//traitement des arguments
 
-	//blablabla
+    // Init du programme -
+    // Chargement des différentes parties -
 
-	return 0;
+    // Connexion initiale serveur
+
+    // Lancement des threads
+
+    // Boucle...
+
+    return 0;
 }
