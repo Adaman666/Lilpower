@@ -97,11 +97,25 @@ crypt_key* crypt_create_private(crypt_key** public_key)
  *
  *	@retour: message encryptÃ©
  */
-char* crypt_encrypt(char* message, crypt_key* public_key)
+char* crypt_encrypt(unsigned short int* message, crypt_key* public_key)
 {
 	//ressources
-
-	//TODO
+	unsigned long double* encrypt = NULL;
+	int i, size;
+	
+	//allocation du tableau du message encrypté
+	size = sizeof(message)/sizeof(unsigned short int);
+	encrypt = (unsigned long double*)malloc(size*sizeof(unsigned long double));
+	if(!encrypt){
+		perror("****ERROR****\nIn crypt_encrypt ");
+		exit(EXIT_FAILURE);}
+		
+	//encryptage:
+	for(i=0; i<size; i++)
+		encrypt[i]=pow(message[i], public_key->e)%public_key->n;
+		
+	//retour du message encrypté
+	return (char*)encrypt;
 }
 
 /**
@@ -112,11 +126,25 @@ char* crypt_encrypt(char* message, crypt_key* public_key)
  *
  *	@retour: message dÃ©cryptÃ©
  */
-char* crypt_decrypt(char* message, crypt_key* private_key)
+char* crypt_decrypt(unsigned long double* message, crypt_key* private_key)
 {
 	//ressources
+	short int* decrypt = NULL;
+	int i, size;
 	
-	//TODO
+	//allocation du tableau de message décrypté
+	size = sizeof(message)/sizeof(unsigned long double);
+	decrypt = (unsigned short int)malloc(sizeof(unsigned short int)*size);
+	if(!decrypt){
+		perror("****ERROR****\nIn crypt_decrypt ");
+		exit(EXIT_FAILURE);}
+		
+	//encryptége
+	for(i=0; i<size; i++)
+		decrypt[i]=pow(message[i], private_key->d)%private_key->n;
+		
+	//retour du message décrypté
+	return decrypt;
 }
 
 /**
