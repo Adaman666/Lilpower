@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[])
+{
+	//ressources
+	
+	//lecture des configurations
+	
+	//affichage du message de bienvenue
+	
+	//ouverture des ports d'écoute
+	
+	//lancement du thread d'écoute réseau
+	
+	//lancement de la boucle d'écoute des commandes
+	
+	//envoi du signal de fin du thread
+	
+	//destruction des données
+	
+	//fin
+	return 0;
+}
